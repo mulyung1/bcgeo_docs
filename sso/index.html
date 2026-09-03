@@ -1,0 +1,1016 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cgbenin.landscapealliance.org/sso/">
+      
+      
+        <link rel="prev" href="../regreen/">
+      
+      
+        <link rel="next" href="../volumes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Single-Sign-On - BCGeo Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather Sans";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="yellow">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#single-sign-on" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="BCGeo Docs" class="md-header__button md-logo" aria-label="BCGeo Docs" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BCGeo Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Single-Sign-On
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="yellow"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BCGeo Docs" class="md-nav__button md-logo" aria-label="BCGeo Docs" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    BCGeo Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome to BCGeo Dev
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regreen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regreen App Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single-Sign-On
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single-Sign-On
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#start-keycloack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start Keycloack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#login-to-admin-console-create-a-realm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Login to admin console &amp; Create a Realm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a user
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secure-bcgeo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secure BCGeo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geonode-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geonode integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-a-new-social-app-in-django-admin-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Register a new social app in django admin console
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../volumes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Volumes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#start-keycloack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start Keycloack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#login-to-admin-console-create-a-realm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Login to admin console &amp; Create a Realm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a user
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secure-bcgeo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secure BCGeo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geonode-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geonode integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-a-new-social-app-in-django-admin-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Register a new social app in django admin console
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="single-sign-on">Single-Sign-On</h1>
+<p>SISEB and BCGeo need a sso utility.</p>
+<ul>
+<li>that is, we need to manage users and groups from a single source.</li>
+<li>hence keycloack</li>
+<li>initially we use a separate dockerised keycloack implementation like</li>
+</ul>
+<p><em>Find kyclk docs <a href="https://www.keycloak.org/getting-started/getting-started-docker">here</a></em></p>
+<ul>
+<li><a href="#start-keycloack">Start Keycloack</a></li>
+<li><a href="#login-to-admin-console--create-a-realm">Login to admin console &amp; Create a Realm</a></li>
+<li><a href="#create-a-user">Create a user</a></li>
+<li><a href="#secure-bcgeo">Secure BCGeo</a></li>
+<li><a href="#geonode-integration">Geonode integration</a></li>
+<li><a href="#register-a-new-social-app-in-django-admin-console">Register a new social app in django admin console</a></li>
+<li><a href="#adding-keycloack-groups-to-oidc-token">Adding Keycloack Groups to OIDC Token</a><ul>
+<li><a href="#architcture">Architcture</a></li>
+<li><a href="#1-create-the-group-in-keycloak">1. Create the group in Keycloak</a></li>
+<li><a href="#2-tell-keycloak-to-put-groups-into-the-oidc-token">2. Tell Keycloak to put groups into the OIDC token</a></li>
+<li><a href="#3-testing">3. Testing</a></li>
+<li><a href="#4-create-the-corresponding-group-in-geonode">4. Create the corresponding group in geonode</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="start-keycloack">Start Keycloack</h2>
+<p>create a <code>docker-compose.yml</code> file like:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">keycloak</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">quay.io/keycloak/keycloak:latest</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">keycloak_server</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">start-dev</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">KC_BOOTSTRAP_ADMIN_USERNAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="w">      </span><span class="nt">KC_BOOTSTRAP_ADMIN_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">change_me</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"0.0.0.0:8080:8080"</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/home/mulyung1/keycloak/_data:/opt/keycloak/data</span>
+
+<span class="l l-Scalar l-Scalar-Plain">~</span><span class="w">              </span>
+</code></pre></div>
+<p>start the keycloack_server like:</p>
+<p><div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+find your admin panel at</p>
+<p><code>http://your_machine_ip:8080</code></p>
+<h2 id="login-to-admin-console-create-a-realm">Login to admin console &amp; Create a Realm</h2>
+<p>a realm is like a tenant.</p>
+<p>each realm allows admins create isolated groups of apps &amp; users</p>
+<p>initial realm is called master realm</p>
+<p>to create 1st realm
+- open the admin console
+- click <code>manage realms</code>(in left column) 
+- click <code>create realm</code>
+- enter <code>Benin CLimate GeoPortal</code> in the <em>Realm name</em> field
+- click create</p>
+<p><img alt="alt text" src="../assets/create_realm_image.png" /></p>
+<h2 id="create-a-user">Create a user</h2>
+<p>the realm has no users yet</p>
+<ul>
+<li>verify you're still in the <em>Benin CLimate GeoPortal</em> realm</li>
+<li>click <code>Users</code>(left hand menu)</li>
+<li>click <code>Create new user</code></li>
+<li>Fill in the form</li>
+<li>click <code>Create</code></li>
+</ul>
+<p><img alt="alt text" src="../assets/create_user_image.png" /></p>
+<p>our user needs a password to login. to set the initial passwd:
+- click <code>Credentials</code>(top of the page)
+- fill the <code>Set password</code> form
+- toggle <code>Temporary</code> to <code>off</code>(so user won't need to update password at 1st login)</p>
+<p><img alt="alt text" src="../assets/set_passwd_image.png" /></p>
+<h2 id="secure-bcgeo">Secure BCGeo</h2>
+<p>register BCGeo(your_app) with your kyclk instance:
+- open the admin console
+- click <code>Benin Climate GeoPortal</code> next to <code>Current realm</code>
+- click <code>Clients</code>
+- click <code>Create client</code>
+- fill the form like:
+    - <code>Client type</code> : <strong>OpenID Connect</strong>
+    - <code>Client ID</code> : <strong>bcgeo</strong></p>
+<p><img alt="alt text" src="../assets/create_client_image.png" /></p>
+<ul>
+<li>ckick <code>Next</code></li>
+<li>Confirm that <code>Standard flow</code> is enabled</li>
+<li>toggle <code>Client authentication</code> to <code>ON</code></li>
+</ul>
+<p><img alt="alt text" src="../assets/client_settings_image.png" /></p>
+<ul>
+<li>click <code>Next</code></li>
+<li>in logi settings:<ul>
+<li>set <code>Valid redirect URIs to</code>http://192.168.8.41/account/geonode_openid_connect/login/callback/`</li>
+<li>set <code>Web Origins</code> to <code>http://192.168.8.41</code></li>
+</ul>
+</li>
+</ul>
+<p><img alt="alt text" src="../assets/login_settings_image.png" />
+- click <code>Save</code> </p>
+<h2 id="geonode-integration">Geonode integration</h2>
+<p>in <code>settings.py</code>, add the new <code>SOCIALACCOUNT_PROVIDER</code>, now kyclk.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># ============================================================</span>
+<span class="c1"># Keycloak OpenID Connect</span>
+<span class="c1"># ============================================================</span>
+
+<span class="n">KEYCLOAK_BASE_URL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span>
+    <span class="s2">"KEYCLOAK_BASE_URL"</span>
+<span class="p">)</span>
+
+<span class="n">SOCIALACCOUNT_PROVIDERS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"geonode_openid_connect"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"NAME"</span><span class="p">:</span> <span class="s2">"Keycloak"</span><span class="p">,</span>
+
+        <span class="s2">"SCOPE"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">"openid"</span><span class="p">,</span>
+            <span class="s2">"profile"</span><span class="p">,</span>
+            <span class="s2">"email"</span><span class="p">,</span>
+        <span class="p">],</span>
+
+        <span class="s2">"AUTH_PARAMS"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"prompt"</span><span class="p">:</span> <span class="s2">"login"</span><span class="p">,</span>
+        <span class="p">},</span>
+
+        <span class="s2">"COMMON_FIELDS"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"email"</span><span class="p">,</span>
+            <span class="s2">"first_name"</span><span class="p">:</span> <span class="s2">"given_name"</span><span class="p">,</span>
+            <span class="s2">"last_name"</span><span class="p">:</span> <span class="s2">"family_name"</span><span class="p">,</span>
+        <span class="p">},</span>
+
+        <span class="s2">"UID_FIELD"</span><span class="p">:</span> <span class="s2">"sub"</span><span class="p">,</span>
+
+        <span class="s2">"GROUP_ROLE_MAPPER_CLASS"</span><span class="p">:</span> <span class="p">(</span>
+            <span class="s2">"geonode.people.profileextractors.OpenIDGroupRoleMapper"</span>
+        <span class="p">),</span>
+
+        <span class="s2">"ACCESS_TOKEN_URL"</span><span class="p">:</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">KEYCLOAK_BASE_URL</span><span class="si">}</span><span class="s2">/protocol/openid-connect/token"</span>
+        <span class="p">),</span>
+
+        <span class="s2">"AUTHORIZE_URL"</span><span class="p">:</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">KEYCLOAK_BASE_URL</span><span class="si">}</span><span class="s2">/protocol/openid-connect/auth"</span>
+        <span class="p">),</span>
+
+        <span class="s2">"PROFILE_URL"</span><span class="p">:</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">KEYCLOAK_BASE_URL</span><span class="si">}</span><span class="s2">/protocol/openid-connect/userinfo"</span>
+        <span class="p">),</span>
+
+        <span class="s2">"ID_TOKEN_ISSUER"</span><span class="p">:</span> <span class="n">KEYCLOAK_BASE_URL</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>in your <code>.env</code> file add:
+<div class="highlight"><pre><span></span><code># ============================================================
+# Keycloak / OpenID Connect
+# ============================================================
+
+SOCIALACCOUNT_OIDC_PROVIDER_ENABLED=True
+SOCIALACCOUNT_OIDC_PROVIDER=geonode_openid_connect
+SOCIALACCOUNT_AUTO_SIGNUP=True
+SOCIALACCOUNT_LOGIN_ON_GET=True
+SOCIALACCOUNT_WITH_GEONODE_LOCAL_SINGUP=True
+SOCIALACCOUNT_SYNC_USER_GROUPS_ON_LOGIN=FULL_SYNC
+KEYCLOAK_BASE_URL="http://192.168.8.41:8080/realms/geonode_dev"
+</code></pre></div></p>
+<p>Recreate your django container</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>--force-recreate<span class="w"> </span>django
+</code></pre></div>
+<h2 id="register-a-new-social-app-in-django-admin-console">Register a new social app in django admin console</h2>
+<ul>
+<li>open admin console in django</li>
+<li>go to <code>Social Accounts&gt;&gt;Social applications</code><ul>
+<li>Provider is now set to <code>Keycloak</code> not google(default)</li>
+<li>fill <code>Name</code> to your 3rd party auth app: <code>Keycloack</code></li>
+<li>add <code>client id</code>(add the client id from keycloak): <code>bcgeo</code></li>
+<li>add <code>Secret key</code>(find this in <code>Credentials</code> tab under bcgeo client)</li>
+<li>add domain name or ip of keycloack server in <code>Sites</code></li>
+<li><code>save</code>
+<img alt="alt text" src="../assets/django_adm_image.png" /></li>
+</ul>
+</li>
+</ul>
+<p>Now the app has a thirdparty login solution like:</p>
+<p><img alt="alt text" src="../assets/login_image.png" /></p>
+<p>hitting sign in with keycloak gets you to</p>
+<p><img alt="alt text" src="../assets/kyclk_image.png" /></p>
+<h1 id="adding-keycloack-groups-to-oidc-token">Adding Keycloack Groups to OIDC Token</h1>
+<p>Keycloak is the chosen single source of truth for user membership, within SISEB and BCGeo.</p>
+<p>GeoNode 5.0.1 does not create the GeoNode group automatically from the Keycloak group.</p>
+<p>The GeoNode group must already exist, and the Keycloak group name must match the GeoNode group slug. </p>
+<p>On login, GeoNode reads the groups claim and adds/removes the user from the corresponding GeoNode groups</p>
+<h2 id="architcture">Architcture:</h2>
+<pre><code>                ┌──────────────────────┐
+                │      Keycloak        │
+                │                      │
+                │ Users                │
+                │ Groups               │
+                │ User ↔ Group         │
+                └──────────┬───────────┘
+                           │
+                     OIDC login
+                           │
+                   groups claim
+                           │
+                           ▼
+                ┌──────────────────────┐
+                │       GeoNode        │
+                │                      │
+                │ Django User          │
+                │ GeoNode Group        │
+                │ User ↔ Group         │
+                └──────────────────────┘
+</code></pre>
+<p>GeoNode 5.0.1's <a href="https://raw.githubusercontent.com/GeoNode/geonode/5.0.1/geonode/people/adapters.py"><code>GenericOpenIDConnectAdapter</code></a> 
+- extracts groups from the OIDC response, 
+- parses each group, 
+- looks up a GroupProfile by slug, and 
+- joins the user to that group. 
+- It also removes the user from groups that aren't present in the claim</p>
+<h2 id="1-create-the-group-in-keycloak">1. Create the group in Keycloak</h2>
+<p>In geonode_dev realm:
+- go to <code>Groups</code>
+    - create a group <code>mcvt</code>
+<img alt="alt text" src="../assets/grp_image.png" /></p>
+<ul>
+<li>inside mcvt group, go to <code>Members</code> tab<ul>
+<li>click <code>Add Member</code></li>
+<li>choose a member from the list</li>
+</ul>
+</li>
+</ul>
+<p><img alt="alt text" src="../assets/member_image.png" /></p>
+<p>by now, Keycloack knows:</p>
+<div class="highlight"><pre><span></span><code>victor
+   └── mcvt
+</code></pre></div>
+<h2 id="2-tell-keycloak-to-put-groups-into-the-oidc-token">2. Tell Keycloak to put groups into the OIDC token</h2>
+<ul>
+<li>
+<p>Keycloak has a built-in Group Membership OIDC protocol mapper, read more <a href="https://www.keycloak.org/admin-api/protocol-mappers?utm_source=chatgpt.com#oidc-group-membership-mapper">here</a></p>
+</li>
+<li>
+<p>It maps a user's Keycloak group membership into a token claim. </p>
+</li>
+<li>
+<p>It also supports ID token, access token and userinfo output.</p>
+</li>
+<li>
+<p>Click <code>Client scopes</code></p>
+</li>
+<li>Hit <code>Create client scope</code></li>
+<li>Fill values like:<ul>
+<li>Name: groups</li>
+<li>Protocol: OpenID Connect</li>
+<li>Toggle display consent screen to <code>off</code></li>
+</ul>
+</li>
+</ul>
+<p><img alt="alt text" src="../assets/scope_image.png" /></p>
+<ul>
+<li>Hit <code>Save</code></li>
+</ul>
+<p>Add this client scope to your client</p>
+<ul>
+<li>Go to <code>Clients</code> &gt;&gt; <code>bcgeo</code> &gt;&gt; <code>Add client scope</code> </li>
+<li><code>groups</code>will show up, click on it</li>
+</ul>
+<p>Configure a mapper for this scope</p>
+<ul>
+<li>Go to <code>Client scopes</code></li>
+<li>Hit the <code>Mappers</code> tab</li>
+<li>
+<p>if no mapper exists, hit <code>configure new mapper</code> &gt;&gt; choose <code>Group Membership</code> mapper
+<img alt="alt text" src="../assets/conf_image.png" /></p>
+<ul>
+<li>else, hit 'Add Mapper' &gt;&gt; <code>by configuration</code> &gt;&gt; choose <code>Group Membership</code> </li>
+</ul>
+</li>
+<li>
+<p>fill in the form like:</p>
+</li>
+</ul>
+<p><img alt="alt text" src="../assets/mapper_image.png" /></p>
+<p>For GeoNode integration, 
+- Add to userinfo key as the GeoNode adapter calls the OIDC userinfo endpoint and merges that data into <code>extra_data</code></p>
+<h2 id="3-testing">3. Testing</h2>
+<p>Hit keycloaks token endopoint to get the token like
+- for this to run ensure you have given the client <code>Direct grant access rights</code> in keycloack admin panel.</p>
+<p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>POST<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">"http://172.28.70.236:8080/realms/geonode_dev/protocol/openid-connect/token"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/x-www-form-urlencoded"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">"client_id=bcgeo"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">"client_secret=4LF8zMuWwMAYZk01vEMR4cxB9NIbWcwDysfOcxZLyWrBuPBPLo38SXRMLdVBOOHtpI9nItGjuSscAnITQftTIl"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">"username=vicky"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">"password=ex1414ps33."</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">"grant_type=password"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s2">"scope=openid profile email"</span>
+</code></pre></div>
+<img alt="alt text" src="../assets/tkn_ept_image.png" /></p>
+<p>get the access token value to get user info.</p>
+<p>we expect the groups to be added as a claim like:
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">"http://172.28.70.236:8080/realms/geonode_dev/protocol/openid-connect/userinfo"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">"Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzZWNuREQ0RHVyZTVaSDhkWXZpbmo2Vi1QTnZjZHpoOG9PaTFrZlR4bTdBIn0.eyJleHAiOjE3ODgyNjYxMTAsImlhdCI6MTc4ODI2NTgxMCwianRpIjoib25ydHJvOjY5ZjFhYjA5LTlkYmQtMDY4Ni1jMTlhLTQ0NTUwMGU3Y2M4NCIsImlzcyI6Imh0dHA6Ly8xNzIuMjguNzAuMjM2OjgwODAvcmVhbG1zL2dlb25vZGVfZGV2IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImM1MjQ3OTZjLTllZDItNDRlZS04NDJjLTU5ZGY3MzhiZTE0YyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImJjZ2VvIiwic2lkIjoiTGdPTGNKT0ZqUVo0bWREbDBiZGdyRW5VIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vMTcyLjI4LjcwLjIzNiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1iZW5pbiBjbGltYXRlIGdlb3BvcnRhbCIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJuYW1lIjoiVmljdG9yIE11bHl1bmdpIiwiZ3JvdXBzIjpbIm1jdnQiXSwicHJlZmVycmVkX3VzZXJuYW1lIjoidmlja3kiLCJnaXZlbl9uYW1lIjoiVmljdG9yIiwiZmFtaWx5X25hbWUiOiJNdWx5dW5naSIsImVtYWlsIjoidmlja3ltdWx5dW5nczE5OTlAZ21haWwuY29tIn0.iLKXZ3L72QUIzL4-LDO5q4IWPOOpBBPmb4XJ4WsayeRoj1f5xoVhopwXmqXIUXYTCHOx0rqUTDsfN4hm4IDbcIp7nFbj_6gh2puLEA9lAlE6qoJSZr4JHaA5N0LDcHXevvK8LmX9S81J7CY9-VKBGWb_2HgVAG43BghPCJsnRIj7cMO566tTvoMF_-g4c2u5ZVodM8DLVOOciCqcUFM5bx2AawVZ278UdAVO6a4ijF4IChd8FsRVYRRHAb97a8AdcxJl47SlV-HlpFtUJ8c70ZVBOtwvmqN_s11MjwP_Dqa56j0XtmEnmSs4P76Vyw8VOSPkwFbpozG0E7QkjOfdbg"</span>
+
+
+<span class="o">{</span>
+<span class="w">  </span><span class="s2">"sub"</span>:<span class="s2">"c524796c-9ed2-44ee-842c-59df738be14c"</span>,
+<span class="w">  </span><span class="s2">"email_verified"</span>:false,
+<span class="w">  </span><span class="s2">"name"</span>:<span class="s2">"Victor Mulyungi"</span>,
+<span class="w">  </span><span class="s2">"groups"</span>:<span class="o">[</span><span class="s2">"mcvt"</span><span class="o">]</span>,
+<span class="w">  </span><span class="s2">"preferred_username"</span>:<span class="s2">"vicky"</span>,
+<span class="w">  </span><span class="s2">"given_name"</span>:<span class="s2">"Victor"</span>,
+<span class="w">  </span><span class="s2">"family_name"</span>:<span class="s2">"Mulyungi"</span>,
+<span class="w">  </span><span class="s2">"email"</span>:<span class="s2">"vickymulyungs1999@gmail.com"</span>
+<span class="o">}</span>
+</code></pre></div></p>
+<h2 id="4-create-the-corresponding-group-in-geonode">4. Create the corresponding group in geonode</h2>
+<p>Now we need GeoNode to consume <code>groups: ["mcvt"]</code> and synchronize it to a Django/GeoNode group.</p>
+<p>syncing is handled by our env variable <code>SOCIALACCOUNT_SYNC_USER_GROUPS_ON_LOGIN = "FULL_SYNC"</code></p>
+<ul>
+<li>
+<p>create a GeoNode group with the exact same name as the Keycloak group:</p>
+<ul>
+<li>Go to admin home page in geononde</li>
+<li>In profile, click <code>create group</code></li>
+</ul>
+</li>
+</ul>
+<p><img alt="alt text" src="../assets/grp2_image.png" />
+<img alt="alt text" src="../assets/crt_grp_image.png" /></p>
+<pre><code>-
+</code></pre>
+<div class="highlight"><pre><span></span><code>Keycloak
+└── mcvt
+
+GeoNode
+└── mcvt
+</code></pre></div>
+<p><img alt="alt text" src="../assets/layout_image.png" /></p>
+<p><em>NOTE: the group name must match what is in keycloack token claim</em></p>
+<ul>
+<li>Log in with keycloack as user vicky.</li>
+<li>geononde synchronises the groups and add you to same group in geonode.</li>
+</ul>
+<p><img alt="alt text" src="../assets/members_image.png" /></p>
+<p>When Victor logs in through Keycloak, the flow is:
+<div class="highlight"><pre><span></span><code>                    KEYCLOAK
+                realm: geonode_dev
+                       │
+                       │
+              ┌────────┴────────┐
+              │                 │
+           User: vicky       Group: mcvt
+              │                 │
+              └────────┬────────┘
+                       │
+                       ▼
+                OIDC authentication
+                       │
+                       ▼
+              groups claim mapper
+                       │
+                       ▼
+             /userinfo endpoint
+                       │
+                       ▼
+              {
+                "preferred_username": "vicky",
+                "email": "...",
+                "groups": ["mcvt"]
+              }
+                       │
+                       ▼
+                    GEONODE
+                       │
+                       ▼
+             GenericOpenIDConnectAdapter
+                       │
+                       ▼
+                 Django User
+                    vicky
+                       │
+                       ▼
+             Group synchronization
+                       │
+                       ▼
+               Django Group
+                   mcvt
+                       │
+                       ▼
+                 vicky ∈ mcvt
+                       │
+                       ▼
+              GeoNode permissions
+</code></pre></div></p>
+<h2 id="references">References</h2>
+<ul>
+<li>https://chatgpt.com/s/t_6a86db279c5c8191846bb5d66837e808</li>
+<li>https://www.keycloak.org/admin-api/protocol-mappers?utm_source=chatgpt.com#oidc-group-membership-mapper</li>
+<li>https://raw.githubusercontent.com/GeoNode/geonode/5.0.1/geonode/people/adapters.py</li>
+<li>https://chatgpt.com/s/t_6a98004b4b748191bc54b8549f065d61</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
