@@ -310,9 +310,22 @@ processing file django.po in /home/mulyung1/geonode_projects/my_geonode/src/geon
 ```
 ensure the generated `django.mo` files are present in app.
 
-**how to overide the menu items**
+run these two commands to 
 
-read this resource: https://chat.deepseek.com/share/a6i0pwf00wctmz8h2r
+1. collect static files(translation files) into django container
+
+```zsh
+docker compose exec -it django python manage.py collectstatic --no-input -c
+```
+
+2. restart django incase the translations dont appear
+```zsh
+docker compose restart django
+```
+
+for more, read this resource: 
+
+https://chat.deepseek.com/share/a6i0pwf00wctmz8h2r
 
 avatar source:
 
