@@ -229,21 +229,13 @@ docker compose exec django python manage.py collectstatic --noinput --clear
 ```
 
 ### Transalations
-- requires gettext installed.
-- inside container, install gettext
-
-##TODO: Install it during image build
-
-```zsh
-docker-compose exec django bash
-apt-get update && apt-get install -y gettext
-```
+- requires gettext, which ships with geonode.
 
 This guide adds translations for the 
 - geonode-mapstore-client single page app
 - django template.
 
-1 **Limit the List of languages**
+**1. Limit the List of languages**
 
 edit .env file in geonode project.
 
@@ -253,13 +245,16 @@ uncomment/add this
 LANGUAGE_CODE=en
 LANGUAGES=(('en-us','English'),('fr-fr', 'French'))
 ```
-2 **Update translation in Django templates**
+**2. Update translation in Django templates**
 
 edit the hero.html template created during title customization in the jumbotron
 
 add to the hero div,
+
 - {% load i18n %}
+
 - Translation block: {% trans } >> wraps the title and description
+
 
 ```html
 
