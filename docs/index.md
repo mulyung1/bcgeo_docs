@@ -232,8 +232,10 @@ docker compose exec django python manage.py collectstatic --noinput --clear
 - requires gettext, which ships with geonode.
 
 This guide adds translations for the 
+
 - geonode-mapstore-client single page app
-- django template.
+
+- django templates.
 
 **1. Limit the List of languages**
 
@@ -289,7 +291,7 @@ django-admin makemessages --no-wrap --no-location -l en_US -l fr_FR -d django -e
 
 _Note: the flag `-l` <locale> can be used multiple times for each language supported in the project_
 
-- lets now edit the .po files to add french translations.
+- lets now edit the .po files to add french translations in both `en_US` & `fr_FR' folders.
 
 - Inside the `django.po` file we will find empty string for each `msgstr` property that could be filled with the translation
 
