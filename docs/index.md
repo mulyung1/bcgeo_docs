@@ -289,17 +289,52 @@ add to the hero div,
 django-admin makemessages --no-wrap --no-location -l en_US -l fr_FR -d django -e "html,txt,py" -i docs 
 ```
 
+??? info "What is the file structure like?"
+
+    django.po files in the french and english folders
+    ``` zsh
+    locale
+    ├── en_US
+    │   └── LC_MESSAGES
+    │       └── django.po
+    └── fr_FR
+        └── LC_MESSAGES
+            └── django.po
+
+    ```
+
 _Note: the flag `-l` <locale> can be used multiple times for each language supported in the project_
 
 - lets now edit the .po files to add french translations in both `en_US` & `fr_FR' folders.
 
-- Inside the `django.po` file we will find empty string for each `msgstr` property that could be filled with the translation
+- Inside the `/locale/fr_FR/LC_MESSAGES/django.po` file we will find empty string for each `msgstr` property is to be filled with the translation text
+
+    - No need to fill the `/locale/en_US/LC_MESSAGES/django.po` as this is the default string django faals back to.
 
 - Finally we can compile the locale(_language code_) file to make them available to the django templates
 
 ```bash
 django-admin compilemessages
 ```
+??? info "What is the file structure like?"
+
+    django.mo files in the french and english folders
+
+    These are machine readable files
+    ``` zsh
+    locale
+    ├── en_US
+    │   └── LC_MESSAGES
+    │       └── django.po
+    |       └── django.mo 
+    └── fr_FR
+        └── LC_MESSAGES
+            └── django.po
+            └── django.mo
+
+    ```
+
+
 you will see output like:
 ```bash
 (docker_env) mulyung1@ubuntu2404:~/geonode_projects/my_geonode$ django-admin makemessages --no-location -l en_US -l it_FR -d django -e "html,txt,py" -i docs
