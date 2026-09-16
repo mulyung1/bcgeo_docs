@@ -1,9 +1,13 @@
-# Let's Encrypt Certificates
+# SSL Certificates
 
 
 SSL certificates encrypt data sent from client to server.
 
-This serves to protect user info from `peeping` by hackers.
+- This scrambles sensitive info like passwords and credit card info during transit
+
+- They also verify that a website belongs to the stated owner.
+
+- 
 
 Let's Encrypt is a service that gives us free SSL certs.
 ## Add cetificates
