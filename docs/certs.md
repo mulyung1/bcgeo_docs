@@ -1,5 +1,6 @@
 # SSL Certificates
 
+## **overview**
 
 SSL certificates encrypt data sent from client to server.
 
@@ -9,8 +10,15 @@ SSL certificates encrypt data sent from client to server.
 
 - 
 
-Let's Encrypt is a service that gives us free SSL certs.
-## Add cetificates
+Let's Encrypt is a free, automated **open Certificate Authority.**
+
+- It issues SSL/TLS certificates to allow websites use secure HTTPS conections
+
+- Certbot, a free-opensource software fetches and installs certificates.
+
+    - it is the client that speaks to let's encrypt servers
+
+## **Add cetificates**
 
 in geonode, we change our `.env` file like:
 
@@ -39,7 +47,7 @@ Thus set an admin email
 ADMIN_EMAIL=<set a valid email>
 ```
 
-## Restart the containers
+## **Restart the containers**
 
 Whenever changes are done to `.env`, you need to rebuild the container.
 
@@ -49,7 +57,7 @@ docker compose down
 docker compose up -d
 ```
 
-### Inspect certificate generation
+### **Inspect certificate generation**
 
 Check certs container to debug
 
@@ -91,7 +99,7 @@ letsencrypt4geonode_project  | -------------------------------------------------
 ```
 
 
-## references
+## **references**
 
 - [Deploy geonode on a production server](https://docs.geonode.org/projects/v4/en/4.4.x/install/basic/index.html#second-step-deploy-geonode-on-a-production-server)
 - [Automated renewal of Let's Encrypt Certs](https://eff-certbot.readthedocs.io/en/latest/using.html#setting-up-automated-renewal)
