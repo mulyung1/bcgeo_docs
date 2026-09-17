@@ -521,7 +521,7 @@ To integrate a 3rd-party sso to geonode,you need to
 
     - once auth is a success, the user will be redirected to your app
 
-        - this will need you set a valid redirect uri & a web origin
+        - this will need you set a `valid redirect uri` & a `web origin`
 
 - Create a social app in geonode that users will use as a 3rd party authentication system.
 
@@ -529,8 +529,8 @@ To integrate a 3rd-party sso to geonode,you need to
 
 ## References
 
-- https://chatgpt.com/s/t_6a86db279c5c8191846bb5d66837e808
-- https://www.keycloak.org/admin-api/protocol-mappers?utm_source=chatgpt.com#oidc-group-membership-mapper
-- https://raw.githubusercontent.com/GeoNode/geonode/5.0.1/geonode/people/adapters.py
-- https://chatgpt.com/s/t_6a98004b4b748191bc54b8549f065d61
+- [ChatGPT: Steps](https://chatgpt.com/s/t_6a86db279c5c8191846bb5d66837e808)
+- [Keycloack Group Mapper](https://www.keycloak.org/admin-api/protocol-mappers#oidc-group-membership-mapper)
+- [Geonode: adapters.py](https://raw.githubusercontent.com/GeoNode/geonode/5.0.1/geonode/people/adapters.py)
+- [ChatGPT: Full Guide](https://chatgpt.com/s/t_6a98004b4b748191bc54b8549f065d61)
 
