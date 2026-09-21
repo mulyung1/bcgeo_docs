@@ -26,4 +26,7 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material mkdocs-encryptcontent-plugin
-      - run: mkdocs gh-deploy --force
+      - name: Deploy Docs
+        env:
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: mkdocs gh-deploy --force

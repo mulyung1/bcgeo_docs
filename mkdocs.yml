@@ -42,5 +42,5 @@ markdown_extensions:
 plugins:
   - search 
   - encryptcontent:
-     password_file: 'passwords.yml'
-          
+      password_inventory:
+        _global: !ENV PASSWORD
