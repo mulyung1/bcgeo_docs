@@ -25,6 +25,5 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material
-      - run: pip install mkdocs-encryptcontent-plugin
+      - run: pip install mkdocs-material mkdocs-encryptcontent-plugin
       - run: mkdocs gh-deploy --force
