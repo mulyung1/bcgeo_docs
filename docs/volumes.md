@@ -15,7 +15,7 @@
 | `bcgeo-tmp` (bcgeo-tmp) | django, celery, geoserver | `/tmp` | Temporary files (processing artefacts, WPS jobs, etc.) |
 
 
-# From named volumes to bind mounts
+## From named volumes to bind mounts
 
 GeoNode ships with docker managed volumes - `Named volumes`.
 
@@ -377,3 +377,100 @@ Our project structure now looks like::
     └── redisdata/
 
 ```
+
+
+
+## **Backups Philosophy**
+
+BCGeo runs on a dockerised environment.
+
+As a result, volumes keep data persistent across container restarts.
+
+The backups will serve as our reference point. 
+
+!!! tip "How?"
+
+    with future GeoNode updates, we will simply point to the new/updated containers to these volumes and everything should be live.
+
+We will backup the volumes **incrementally**.
+
+- This means only new changes will be written.
+
+- Older files will remain untouched
+
+### **Prequisites**
+
+To run the backup script, you will need to setup:
+
+
+- ssh-keys between backup server and VM
+
+- a cron job to run the script.
+
+### **Backup script**
+
+This bash script will:
+
+1. Run as a cron job on the backup server
+
+2. Require the variables:
+    - VM IP
+
+    - VM user
+
+        - With permissions to read and write the volumes
+
+    - Backup directory(volumes destination on backup server)
+
+    - SSH key location
+
+    - Volume names
+
+
+### **Setup ssh key pair**
+
+#### **generate ssh keys**
+
+on backupsever generate the public private key pairs
+
+```zsh
+ssh-keygen -t ed25519 -f /Users/victor/.ssh/ed25519_bcgeo_key
+```
+#### **copy pub key to vm**
+
+- copy the public to bcgeo vm
+
+```zsh
+ssh-copy-id -i /Users/victor/.ssh/ed25519_bcgeo_key.pub geonode@<vm_ip>
+
+ssh-copy-id -i /Users/victor/.ssh/ed25519_bcgeo_key.pub mulyung1@172.28.71.2
+```
+
+#### **set permissions**
+
+set proper permissions on the key, to avoid ssh rejecting the keys
+
+- on back up server
+
+```zsh
+chmod 600 /Users/victor/.ssh/ed25519_bcgeo_key
+chown $(whoami) /Users/victor/.ssh/ed25519_bcgeo_key
+```
+
+- on vm run
+
+```zsh
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+```
+
+!!! note "Remember"
+
+    When running from cron, $HOME may differ from your interactive shell, so always use an absolute path for the key (which we did above).
+
+
+## References
+
+- [Set up ssh keys](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)
+
+- 
