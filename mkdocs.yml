@@ -43,4 +43,4 @@ plugins:
   - search 
   - encryptcontent:
       password_inventory:
-        _global: !ENV PASSWORD
+        _global: !ENV PASSWORD # you'll need to `export PASSWORD=your_password` to env for dev
