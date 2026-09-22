@@ -1,4 +1,33 @@
-# Single-Sign-On
+# **Single-Sign-On**
+
+This is an authentication process that lets users access multiple independent apps & websites using just one set of login credentials.
+
+
+
+## **How keycloack handles sessions**
+
+- When you log into an app protected by keycloack it creates a network of session objects that track who you are.
+
+- Kyclk creates temporary **authentication sessions** to track your progress through the login flow.
+
+- On **200 OK** authentication, these transform into a **User session** that represents your overall login to kyclk.
+
+- As now you access different apps, each gets its own **Client Session** attached to your user session.
+
+![alt text](assets/sessions_image.png)
+
+This hiearchy is the heart of keycloacks sso capability.
+
+!!! info "The Logic"
+
+    You only authenticate once, Kyclk then creates client sessions automatically as you access different apps. e.g., SISEB && GeoPortal.
+
+
+??? abstract "Read More"
+    
+    Read more on keycloack session management [here](https://medium.com/@torinks/keycloak-sessions-67c118107263)
+
+## **The problem**
 
 SISEB and BCGeo need a sso utility.
 
@@ -6,24 +35,12 @@ SISEB and BCGeo need a sso utility.
 - hence keycloack
 - initially we use a separate dockerised keycloack implementation like
 
-_Find kyclk docs [here](https://www.keycloak.org/getting-started/getting-started-docker)_
+??? abstract "Keycloack Setup Docs"
+
+    Find kyclk docs [here](https://www.keycloak.org/getting-started/getting-started-docker)
 
 
-- [Start Keycloack](#start-keycloack)
-- [Login to admin console & Create a Realm](#login-to-admin-console--create-a-realm)
-- [Create a user](#create-a-user)
-- [Secure BCGeo- Client](#secure-bcgeo--client)
-- [Geonode integration](#geonode-integration)
-- [Register a new social app in django admin console](#register-a-new-social-app-in-django-admin-console)
-- [Adding Keycloack Groups to OIDC Token](#adding-keycloack-groups-to-oidc-token)
-    - [Architcture](#architcture)
-    - [1. Create the group in Keycloak](#1-create-the-group-in-keycloak)
-    - [2. Tell Keycloak to put groups into the OIDC token](#2-tell-keycloak-to-put-groups-into-the-oidc-token)
-    - [3. Testing](#3-testing)
-    - [4. Create the corresponding group in geonode](#4-create-the-corresponding-group-in-geonode)
-
-
-## Start Keycloack
+## **Start Keycloack**
 create a `docker-compose.yml` file like:
 
 ```yaml
@@ -54,7 +71,7 @@ find your admin panel at
 
 `http://your_machine_ip:8080`
 
-## Login to admin console & Create a Realm
+## **Login to admin console & Create a Realm**
 
 
 a realm is like a tenant.
@@ -103,7 +120,8 @@ our user needs a password to login. to set the initial passwd:
 
 ![alt text](assets/set_passwd_image.png)
 
-## Secure BCGeo- Client
+## **Secure BCGeo- Client**
+
 register a BCGeo(your_app) client with your kyclk instance:
 
 - open the admin console
@@ -533,4 +551,4 @@ To integrate a 3rd-party sso to geonode,you need to
 - [Keycloack Group Mapper](https://www.keycloak.org/admin-api/protocol-mappers#oidc-group-membership-mapper)
 - [Geonode: adapters.py](https://raw.githubusercontent.com/GeoNode/geonode/5.0.1/geonode/people/adapters.py)
 - [ChatGPT: Full Guide](https://chatgpt.com/s/t_6a98004b4b748191bc54b8549f065d61)
-
+- [Keycloack Session Management](https://medium.com/@torinks/keycloak-sessions-67c118107263)
