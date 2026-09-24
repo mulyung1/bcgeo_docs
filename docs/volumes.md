@@ -53,7 +53,7 @@ cd /opt/.../bcgeo_volumes
 create the dirs
 
 ```zsh
-sudo mkdir -p /opt/.../bcgeo_volumes/{statics,nginx-confd,nginx-certificates,geoserver-data,dbdata,dbbackups,backup-restore,data,tmp,redisdata}
+sudo mkdir -p /opt/geo_django_dev/.dev/volumes/{bcgeo-statics,bcgeo-nginx-confd,bcgeo-nginx-certs,bcgeo-gsdatadir,bcgeo-dbdata,bcgeo-dbbackups,bcgeo-backup-restore,bcgeo-data,bcgeo-tmp,bcgeo-redisdata}
 ```
 
 ## 3. Copy existing named volumes into these directories
@@ -62,8 +62,8 @@ sudo mkdir -p /opt/.../bcgeo_volumes/{statics,nginx-confd,nginx-certificates,geo
 
 ```zsh
 sudo docker run --rm \
-  -v geonode_project-gsdatadir:/source:ro \
-  -v /opt/.../bcgeo_volumes/geoserver-data:/destination \
+  -v bcgeo-gsdatadir:/source:ro \
+  -v /opt/geo_django_dev/.dev/volumes/bcgeo-gsdatadir:/destination \
   alpine sh -c 'cp -a /source/. /destination/'
 ```
 
@@ -71,8 +71,8 @@ sudo docker run --rm \
 
 ```zsh
   sudo docker run --rm \
-  -v geonode_project-dbdata:/source:ro \
-  -v /opt/.../bcgeo_volumes/dbdata:/destination \
+  -v bcgeo-dbdata:/source:ro \
+  -v /opt/geo_django_dev/.dev/volumes/bcgeo-dbdata:/destination \
   alpine sh -c 'cp -a /source/. /destination/'
 ```
 
@@ -80,8 +80,8 @@ sudo docker run --rm \
 ```zsh
 
 sudo docker run --rm \
-  -v geonode_project-dbbackups:/source:ro \
-  -v /opt/.../bcgeo_volumes/dbbackups:/destination \
+  -v bcgeo-dbbackups:/source:ro \
+  -v /opt/geo_django_dev/.dev/volumes/dbbackups:/destination \
   alpine sh -c 'cp -a /source/. /destination/'
 
 ```
@@ -89,74 +89,74 @@ sudo docker run --rm \
 ### 3.4 Static files
 ```zsh
 sudo docker run --rm \
-  -v geonode_project-statics:/source:ro \
-  -v /opt/.../bcgeo_volumes/statics:/destination \
+  -v bcgeo-statics:/source:ro \
+  -v /opt/geo_django_dev/.dev/volumes/bcgeo-statics:/destination \
   alpine sh -c 'cp -a /source/. /destination/'
 ```
 ### 3.5 Nginx configuration
 ```zsh
 sudo docker run --rm \
-  -v geonode_project-nginxconfd:/source:ro \
-  -v /opt/.../bcgeo_volumes/nginx-confd:/destination \
+  -v bcgeo-nginxconfd:/source:ro \
+  -v /opt/geo_django_dev/.dev/volumes/bcgeo-nginxconfd:/destination \
   alpine sh -c 'cp -a /source/. /destination/'
 ```
 ### 3.6 Nginx certificates
 ```zsh
 sudo docker run --rm \
-  -v geonode_project-nginxcerts:/source:ro \
-  -v /opt/.../bcgeo_volumes/nginx-certificates:/destination \
+  -v bcgeo-nginxcerts:/source:ro \
+  -v /opt/geo_django_dev/.dev/volumes/nginxcerts:/destination \
   alpine sh -c 'cp -a /source/. /destination/'
 ```
 
 ### 3.7 Backup/restore
 ```zsh
 sudo docker run --rm \
-  -v geonode_project-backup-restore:/source:ro \
-  -v /opt/.../bcgeo_volumes/backup-restore:/destination \
+  -v bcgeo-backup-restore:/source:ro \
+  -v /opt/geo_django_dev/.dev/volumes/bcgeo-backup-restore:/destination \
   alpine sh -c 'cp -a /source/. /destination/'
 ```
 
 ### 3.8 Data
 ```zsh
 sudo docker run --rm \
-  -v geonode_project-data:/source:ro \
-  -v /opt/.../bcgeo_volumes/data:/destination \
+  -v bcgeo-data:/source:ro \
+  -v /opt/geo_django_dev/.dev/volumes/bcgeo-data:/destination \
   alpine sh -c 'cp -a /source/. /destination/'
 ```
 
 ### 3.9 tmp
 ```zsh
 sudo docker run --rm \
-  -v geonode_project-tmp:/source:ro \
-  -v /opt/.../bcgeo_volumes/tmp:/destination \
+  -v bcgeo-tmp:/source:ro \
+  -v /opt/geo_django_dev/.dev/volumes/bcgeo-tmp:/destination \
   alpine sh -c 'cp -a /source/. /destination/'
 ```
 ### 3.10 Redis
 
 ```zsh
 sudo docker run --rm \
-  -v geonode_project-redisdata:/source:ro \
-  -v /opt/.../bcgeo_volumes/redisdata:/destination \
+  -v bcgeo-redisdata:/source:ro \
+  -v /opt/geo_django_dev/.dev/volumes/bcgeo-redisdata:/destination \
   alpine sh -c 'cp -a /source/. /destination/'
 ```
 
 ## 4. Verify all copied directories
 
 ```zsh
-sudo du -sh /opt/.../bcgeo_volumes/*
+sudo du -sh /opt/geo_django_dev/.dev/volumes/*
 ```
 
 ```py 
-4.0K	/opt/.../bcgeo_volumes/backup-restore
-4.0K	/opt/.../bcgeo_volumes/data
-4.0K	/opt/.../bcgeo_volumes/dbbackups
-158M	/opt/.../bcgeo_volumes/dbdata
-2.7M	/opt/.../bcgeo_volumes/geoserver-data
-20K	    /opt/.../bcgeo_volumes/nginx-certificates
-80K	    /opt/.../bcgeo_volumes/nginx-confd
-104K	/opt/.../bcgeo_volumes/redisdata
-386M	/opt/.../bcgeo_volumes/statics
-88K	    /opt/.../bcgeo_volumes/tmp
+4.0K	/opt/geo_django_dev/.dev/volumes/backup-restore
+4.0K	/opt/geo_django_dev/.dev/volumes/data
+4.0K	/opt/geo_django_dev/.dev/volumes/dbbackups
+158M	/opt/geo_django_dev/.dev/volumes/dbdata
+2.7M	/opt/geo_django_dev/.dev/volumes/geoserver-data
+20K	    /opt/geo_django_dev/.dev/volumes/nginx-certificates
+80K	    /opt/geo_django_dev/.dev/volumes/nginx-confd
+104K	/opt/geo_django_dev/.dev/volumes/redisdata
+386M	/opt/geo_django_dev/.dev/volumes/statics
+88K	    /opt/geo_django_dev/.dev/volumes/tmp
 ```
 their sizes and docker managed volumes should be clser like:
 
@@ -168,16 +168,16 @@ Local Volumes space usage:
 
 ```py
 VOLUME NAME                      LINKS     SIZE
-geonode_project-tmp              0         938B
-geonode_project-data             0         0B
-geonode_project-nginxconfd       0         24.24kB
-geonode_project-backup-restore   0         0B
-geonode_project-dbbackups        0         0B
-geonode_project-dbdata           0         165.4MB
-geonode_project-gsdatadir        0         1.529MB
-geonode_project-nginxcerts       0         2.827kB
-geonode_project-redisdata        0         118.5kB
-geonode_project-statics          0         399.6MB
+bcgeo-tmp              0         938B
+bcgeo-data             0         0B
+bcgeo-nginxconfd       0         24.24kB
+bcgeo-backup-restore   0         0B
+bcgeo-dbbackups        0         0B
+bcgeo-dbdata           0         165.4MB
+bcgeo-gsdatadir        0         1.529MB
+bcgeo-nginxcerts       0         2.827kB
+bcgeo-redisdata        0         118.5kB
+bcgeo-statics          0         399.6MB
 
 ```
 
@@ -188,50 +188,50 @@ services:
 
   django:
     volumes:
-      - /opt/.../bcgeo_volumes/statics:/mnt/volumes/statics
-      - /opt/.../bcgeo_volumes/geoserver-data:/geoserver_data/data
-      - /opt/.../bcgeo_volumes/backup-restore:/backup_restore
-      - /opt/.../bcgeo_volumes/data:/data
-      - /opt/.../bcgeo_volumes/tmp:/tmp
+      - /opt/geo_django_dev/.dev/volumes/statics:/mnt/volumes/statics
+      - /opt/geo_django_dev/.dev/volumes/geoserver-data:/geoserver_data/data
+      - /opt/geo_django_dev/.dev/volumes/backup-restore:/backup_restore
+      - /opt/geo_django_dev/.dev/volumes/data:/data
+      - /opt/geo_django_dev/.dev/volumes/tmp:/tmp
 
   celery:
     volumes:
-      - /opt/.../bcgeo_volumes/statics:/mnt/volumes/statics
-      - /opt/.../bcgeo_volumes/geoserver-data:/geoserver_data/data
-      - /opt/.../bcgeo_volumes/backup-restore:/backup_restore
-      - /opt/.../bcgeo_volumes/data:/data
-      - /opt/.../bcgeo_volumes/tmp:/tmp
+      - /opt/geo_django_dev/.dev/volumes/statics:/mnt/volumes/statics
+      - /opt/geo_django_dev/.dev/volumes/geoserver-data:/geoserver_data/data
+      - /opt/geo_django_dev/.dev/volumes/backup-restore:/backup_restore
+      - /opt/geo_django_dev/.dev/volumes/data:/data
+      - /opt/geo_django_dev/.dev/volumes/tmp:/tmp
 
   nginx:
     volumes:
-      - /opt/.../bcgeo_volumes/nginx-confd:/etc/nginx
-      - /opt/.../bcgeo_volumes/nginx-certificates:/geonode-certificates
-      - /opt/.../bcgeo_volumes/statics:/mnt/volumes/statics
+      - /opt/geo_django_dev/.dev/volumes/nginx-confd:/etc/nginx
+      - /opt/geo_django_dev/.dev/volumes/nginx-certificates:/geonode-certificates
+      - /opt/geo_django_dev/.dev/volumes/statics:/mnt/volumes/statics
 
   letsencrypt:
     volumes:
-      - /opt/.../bcgeo_volumes/nginx-certificates:/geonode-certificates
+      - /opt/geo_django_dev/.dev/volumes/nginx-certificates:/geonode-certificates
 
   geoserver:
     volumes:
-      - /opt/.../bcgeo_volumes/statics:/mnt/volumes/statics
-      - /opt/.../bcgeo_volumes/geoserver-data:/geoserver_data/data
-      - /opt/.../bcgeo_volumes/backup-restore:/backup_restore
-      - /opt/.../bcgeo_volumes/data:/data
-      - /opt/.../bcgeo_volumes/tmp:/tmp
+      - /opt/geo_django_dev/.dev/volumes/statics:/mnt/volumes/statics
+      - /opt/geo_django_dev/.dev/volumes/geoserver-data:/geoserver_data/data
+      - /opt/geo_django_dev/.dev/volumes/backup-restore:/backup_restore
+      - /opt/geo_django_dev/.dev/volumes/data:/data
+      - /opt/geo_django_dev/.dev/volumes/tmp:/tmp
 
   data-dir-conf:
     volumes:
-      - /opt/.../bcgeo_volumes/geoserver-data:/geoserver_data/data
+      - /opt/geo_django_dev/.dev/volumes/geoserver-data:/geoserver_data/data
 
   db:
     volumes:
-      - /opt/.../bcgeo_volumes/dbdata:/var/lib/postgresql/data
-      - /opt/.../bcgeo_volumes/dbbackups:/pg_backups
+      - /opt/geo_django_dev/.dev/volumes/dbdata:/var/lib/postgresql/data
+      - /opt/geo_django_dev/.dev/volumes/dbbackups:/pg_backups
 
   redis:
     volumes:
-      - /opt/.../bcgeo_volumes/redisdata:/data
+      - /opt/geo_django_dev/.dev/volumes/redisdata:/data
 ```
 
 ## 6. Validate the merged compose configuration
@@ -258,15 +258,15 @@ You expect to see volumes as **bind mounts** now pointing to our directories:
     restart: unless-stopped
     volumes:
       - type: bind
-        source: /opt/.../bcgeo_volumes/nginx-confd
+        source: /opt/geo_django_dev/.dev/volumes/nginx-confd
         target: /etc/nginx
         bind: {}
       - type: bind
-        source: /opt/.../bcgeo_volumes/nginx-certificates
+        source: /opt/geo_django_dev/.dev/volumes/nginx-certificates
         target: /geonode-certificates
         bind: {}
       - type: bind
-        source: /opt/.../bcgeo_volumes/statics
+        source: /opt/geo_django_dev/.dev/volumes/statics
         target: /mnt/volumes/statics
         bind: {}
   redis:
@@ -286,7 +286,7 @@ You expect to see volumes as **bind mounts** now pointing to our directories:
     restart: unless-stopped
     volumes:
       - type: bind
-        source: /opt/.../bcgeo_volumes/redisdata
+        source: /opt/geo_django_dev/.dev/volumes/redisdata
         target: /data
         bind: {}
 networks:
@@ -335,7 +335,7 @@ you will see:
 [
   {
     "Type": "bind",
-    "Source": "/opt/.../bcgeo_volumes/dbbackups",
+    "Source": "/opt/geo_django_dev/.dev/volumes/dbbackups",
     "Destination": "/pg_backups",
     "Mode": "rw",
     "RW": true,
@@ -343,7 +343,7 @@ you will see:
   },
   {
     "Type": "bind",
-    "Source": "/opt/.../bcgeo_volumes/dbdata",
+    "Source": "/opt/geo_django_dev/.dev/volumes/dbdata",
     "Destination": "/var/lib/postgresql/data",
     "Mode": "rw",
     "RW": true,
@@ -441,9 +441,9 @@ ssh-keygen -t ed25519 -f /Users/victor/.ssh/ed25519_bcgeo_key
 - copy the public to bcgeo vm
 
 ```zsh
-ssh-copy-id -i /Users/victor/.ssh/ed25519_bcgeo_key.pub geonode@<vm_ip>
+ssh-copy-id -i /path/to/ssh_key.pub -p <ssh_port> <username>@<vm_ip>
 
-ssh-copy-id -i /Users/victor/.ssh/ed25519_bcgeo_key.pub mulyung1@172.28.71.2
+ssh-copy-id -i /Users/victor/.ssh/ed25519_bcgeo_key.pub -p 22 mulyung1@172.28.71.2
 ```
 
 #### **set permissions**
@@ -467,6 +467,13 @@ chmod 600 ~/.ssh/authorized_keys
 !!! note "Remember"
 
     When running from cron, $HOME may differ from your interactive shell, so always use an absolute path for the key (which we did above).
+
+
+## Run the backup script.
+
+```zsh
+bash volumes_backup.sh
+```
 
 
 ## References
