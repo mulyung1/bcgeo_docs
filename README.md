@@ -2,7 +2,8 @@
 
 overview steps
 
-- create venv
+- create + activate venv
+- export password to terminal `export PASSWWORD=your_password` # ensure password is strong as it affescts encryption quality.
 - install material for mkdocs
 - install plugins extension
 - run mkdocs serve
