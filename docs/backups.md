@@ -485,6 +485,18 @@ psql -U postgres -d <geonode_db_name> -f <backup.sql>
 psql -U postgres -d <geoserver_db_name> -f <backup.sql>
 ```
 
+- bring the containers up
+
+```zsh
+docker compose up -d
+```
+
+!!! note "Note"
+
+    use the same environment as the geonode instance you are backing up.
+    
+
+
 ## References
 
 - [Set up ssh keys](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)
