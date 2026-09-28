@@ -1,0 +1,707 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cgbenin.landscapealliance.org/custom_basemaps/">
+      
+      
+        <link rel="prev" href="../certs/">
+      
+      
+        <link rel="next" href="../regreen/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>[Protected] Custom basemaps - BCGeo Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather Sans";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="BCGeo Docs" class="md-header__button md-logo" aria-label="BCGeo Docs" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BCGeo Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [Protected] Custom basemaps
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BCGeo Docs" class="md-nav__button md-logo" aria-label="BCGeo Docs" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    BCGeo Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [Protected] Welcome to BCGeo Dev
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [Protected] Backups and restoration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [Protected] SSL Certificates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [Protected] Custom basemaps
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    [Protected] Custom basemaps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geononde-mapstore-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geononde Mapstore client
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Geononde Mapstore client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-arms-of-the-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Arms of the client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Javascript files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regreen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regreen App Ecosystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sso/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single-Sign-On
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../volumes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Volumes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geononde-mapstore-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geononde Mapstore client
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Geononde Mapstore client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-arms-of-the-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Arms of the client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Javascript files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div id="mkdocs-encrypted-content" style="display:none">hMr0X1vf+mYHP2ClarPt9w==;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</div>
+<div id="mkdocs-decrypted-content" style="display:none">
+    <form id="mkdocs-decrypt-form" class="md-content__inner md-typeset">
+        <h1>This content is protected with AES encryption. </h1>
+        <p>Contact your administrator for access to this page.</p>
+        <input class="md-input" type="password" id="mkdocs-content-password" placeholder="Password">
+        
+        <p id="mkdocs-decrypt-msg"></p>
+    </form>
+</div>
+
+<script type="text/javascript">
+var encryptcontent_id = "encryptcontent_1";
+var encryptcontent_path = "custom_basemaps/";
+var decryption_failure_message = "Invalid password.";
+var encryptcontent_keystore = ["k+ORvUMaxFgb+ClsBfO/Tw==;JOf1RjUS5hSynGAS+tmwHu0X6uEOppD2Mq/ZxqMZvKPIn+5GQqL4m/5c/Px+nStONUCcehM+QZEMfY1yuWnqpcqJOuAnLC9YoWoQy7bDkG7YKLd9tWdjm9ruDfR4Lqbb;nVlvvdXwWEYcJRSnEedHJw=="];
+var encryptcontent_obfuscate = 0;
+
+const encryptcontent_event = new Event("encryptcontent_event");
+var encryptcontent_done = false;
+</script>
+<script type="module">
+if (!window.hasOwnProperty("init_decryptor")) {
+    import("../assets/javascripts/decrypt-contents.js");
+} else {
+    init_decryptor();
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
