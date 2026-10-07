@@ -339,10 +339,6 @@ victor
    └── mcvt
 ```
 
----
-level: secret
----
-
 ### 2. Configure Keycloak to add groups claim into the OIDC token
 
 - Keycloak has a built-in Group Membership OIDC protocol mapper, read more [here](https://www.keycloak.org/admin-api/protocol-mappers?utm_source=chatgpt.com#oidc-group-membership-mapper)
