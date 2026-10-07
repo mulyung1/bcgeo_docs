@@ -462,7 +462,9 @@ GeoNode
 
 ![alt text](assets/layout_image.png)
 
-_NOTE: the group name must match what is in keycloack token claim_
+!!! warning NOTE
+
+    The GeoPortal group name must match what is in keycloack token claim
 
 - Log in with keycloack as user vicky.
 
@@ -552,3 +554,25 @@ To integrate a 3rd-party sso to geonode,you need to
 - [Geonode: adapters.py](https://raw.githubusercontent.com/GeoNode/geonode/5.0.1/geonode/people/adapters.py)
 - [ChatGPT: Full Guide](https://chatgpt.com/s/t_6a98004b4b748191bc54b8549f065d61)
 - [Keycloack Session Management](https://medium.com/@torinks/keycloak-sessions-67c118107263)
+
+
+export SECRET=''
+
+TOKEN=$(curl -s -X POST \
+  "https://auth-siseb.gouv.bj/realms/siseb/protocol/openid-connect/token" \
+  -d "grant_type=client_credentials" \
+  -d "client_id=siseb-geoportail" \
+  -d "client_secret=$SECRET" | jq -r .access_token)
+
+
+curl -s -H "Authorization: Bearer $TOKEN" \
+  "https://auth-siseb.gouv.bj/admin/realms/siseb/groups"
+
+
+curl -s -H "Authorization: Bearer $TOKEN" \
+  "https://auth-siseb.gouv.bj/admin/realms/siseb/groups/2903c6be-9a10-4fc1-bbb0-afdfc64c308b/children?first=0&max=100" | jq
+
+
+curl -s -v \
+  "https://auth-siseb.gouv.bj/realms/siseb/protocol/openid-connect/userinfo" \
+  -H "Authorization: Bearer $TOKEN"
