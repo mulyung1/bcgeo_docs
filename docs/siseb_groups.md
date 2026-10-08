@@ -117,7 +117,28 @@ currently, only `/STRUCTURES` has subgroups
 curl -s -H "Authorization: Bearer $TOKEN" \
   "https://auth-siseb.gouv.bj/admin/realms/siseb/groups/2903c6be-9a10-4fc1-bbb0-afdfc64c308b/children?first=0&max=100" | jq
 ```
+
 ## **4. Get members in `/STRUCTURES`**
+
+Read more [here](https://www.keycloak.org/docs-api/latest/rest-api/index.html#_get_adminrealmsrealmgroupsgroup_idmembers)
+
+```zsh
+curl -s -H "Authorization: Bearer $TOKEN" \
+  "https://auth-siseb.gouv.bj/admin/realms/siseb/groups/2903c6be-9a10-4fc1-bbb0-afdfc64c308b/members" | jq
+```
+
+**Inspect a users info**
+
+```zsh
+curl -s -H "Authorization: Bearer $TOKEN" \
+  "https://auth-siseb.gouv.bj/admin/realms/siseb/users/0971f6a9-5d81-476d-87d4-b10a31d1196f" | jq .
+
+curl -s -H "Authorization: Bearer $TOKEN" \
+  "https://auth-siseb.gouv.bj/admin/realms/siseb/users/0971f6a9-5d81-476d-87d4-b10a31d1196f" | jq .
+
+
+
+```
 
 ## References
 
