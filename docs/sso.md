@@ -405,7 +405,7 @@ curl POST \
   -d "client_id=bcgeo" \
   -d "client_secret=4LF8zMuWwMAYZk01vEMR4cxB9NIbWcwDysfOcxZLyWrBuPBPLo38SXRMLdVBOOHtpI9nItGjuSscAnITQftTIl" \
   -d "username=vicky" \
-  -d "password=ex1414ps33." \
+  -d "password=e4ps33." \
   -d "grant_type=password" \
   -d "scope=openid profile email"
 ```
@@ -555,7 +555,7 @@ To integrate a 3rd-party sso to geonode,you need to
 - [ChatGPT: Full Guide](https://chatgpt.com/s/t_6a98004b4b748191bc54b8549f065d61)
 - [Keycloack Session Management](https://medium.com/@torinks/keycloak-sessions-67c118107263)
 
-
+```zsh
 export SECRET=''
 
 TOKEN=$(curl -s -X POST \
@@ -576,3 +576,30 @@ curl -s -H "Authorization: Bearer $TOKEN" \
 curl -s -v \
   "https://auth-siseb.gouv.bj/realms/siseb/protocol/openid-connect/userinfo" \
   -H "Authorization: Bearer $TOKEN"
+```
+
+### get the user access token
+
+contains claims geoportal will read and use
+
+```zsh
+export PASSWAD=''
+
+curl POST \
+  "https://auth-siseb.gouv.bj/realms/siseb/protocol/openid-connect/token" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "client_id=siseb-geoportail" \
+  -d "client_secret=$SECRET" \
+  -d "username=spacial" \
+  -d "password=$PASSWAD" \
+  -d "grant_type=password" \
+  -d "scope=openid profile email"
+```
+copy and export token to AT
+
+### get user info
+
+Geonode openid connect uses this endpoint.
+curl \
+  "https://auth-siseb.gouv.bj/realms/siseb/protocol/openid-connect/userinfo" \
+  -H "Authorization: Bearer $AT" | jq
