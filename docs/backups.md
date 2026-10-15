@@ -523,6 +523,13 @@ An sftp get script runs as a cron on backup server
 
 - It gets all newer dumps into backup, an hour after backup on prod
 
+??? tip Cron scripts
+
+    Remember to make the script an executable for automation purposes
+
+    ```zsh
+    chmod +x /path/to/backup_file.sh
+    ``` 
 
 ## References
 
