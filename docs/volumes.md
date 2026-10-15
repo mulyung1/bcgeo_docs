@@ -381,3 +381,12 @@ now that the volumes have been copied
 we cannot start containers by simply pointing to them.
 
 Please read [The `Restoration section`](backups.md) for guidance on how to spin up the new containers
+
+
+## Production
+
+volumes location:
+
+- /opt/geo_django_dev/.prod/.bcgeo_volumes/
+
+- prefixed with bcgeo
