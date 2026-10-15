@@ -25,6 +25,11 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
+      - name: Check secret is set.
+        env:
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: 'echo $PASSWORD | grep -q . || (echo "PASSWORD secret is not set" && exit 1)'
+        
       - run: pip install mkdocs-material mkdocs-encryptcontent-plugin
       - name: Deploy Docs
         env:
