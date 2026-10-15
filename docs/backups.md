@@ -20,7 +20,7 @@ We will backup the volumes **incrementally**.
 
 - Older files will remain untouched
 
-### **Prequisites**
+## **Prequisites**
 
 To run the backup script, you will need to setup:
 
@@ -29,7 +29,7 @@ To run the backup script, you will need to setup:
 
 - a cron job to run the script.
 
-### **Backup script**
+## **Volumes Backup script**
 
 ??? abstract "volumes_backup.sh"
 
@@ -59,10 +59,10 @@ To run the backup script, you will need to setup:
 
     # Define the IP address or hostname of the source server
     #SOURCE_HOST="source_ip"
-    SOURCE_HOST="172.28.99.154"
+    SOURCE_HOST=""
 
     # Define the port VM is configured to listen on
-    SOURCE_SSH_PORT="4326"
+    SOURCE_SSH_PORT=""
 
     # Define the path to the custom ssh key
     #SSH_KEY="path/to/your/custom/ssh/key"
@@ -176,7 +176,7 @@ chmod 600 ~/.ssh/authorized_keys
     When running from cron, $HOME may differ from your interactive shell, so always use an absolute path for the key (which we did above).
 
 
-## Run the backup script.
+### Run the volumes backup script.
 
 ```zsh
 bash volumes_backup.sh
@@ -495,6 +495,33 @@ docker compose up -d
 
     use the same environment as the geonode instance you are backing up.
     
+
+## Production
+
+### Volumes
+
+Volumes backup script location in backup server
+
+-  currently: .154 `cgbenin`
+
+- /home/victor/backups/climat_gouv_bj_bkps/volumes/volumes_bkp.sh
+
+backed up volumes location:
+
+- /home/victor/backups/climat_gouv_bj_bkps/volumes
+
+
+A cron Job(on .154) backups up volumes incrementally, weekly.
+
+### Databases
+
+DB backup script runs on prod server
+
+- dumps dbs on prod weekly.
+
+An sftp get script runs as a cron on backup server
+
+- It gets all newer dumps into backup, an hour after backup on prod
 
 
 ## References
