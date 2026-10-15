@@ -498,7 +498,7 @@ docker compose up -d
 
 ## Production
 
-### Volumes
+### <u>Volumes</u>
 
 Volumes backup script location in backup server
 
@@ -513,7 +513,7 @@ backed up volumes location:
 
 A cron Job(on .154) backups up volumes incrementally, weekly.
 
-### Databases
+### <u>Databases</u>
 
 DB backup script runs on prod server
 
@@ -530,6 +530,18 @@ An sftp get script runs as a cron on backup server
     ```zsh
     chmod +x /path/to/backup_file.sh
     ``` 
+### <u>Automation</u>
+
+1 cron job is running on prod server
+
+- gets database dumps.
+
+2 cron jobs are running on backup server.
+
+- one incrementally backs the volumes up
+
+- another gets db dumps
+
 
 ## References
 
