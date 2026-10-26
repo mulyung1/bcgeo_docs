@@ -1,0 +1,15 @@
+# Build output
+site/
+
+# Local virtualenv
+.docs_venv/
+
+# mkdocs-encryptcontent-plugin cache
+encryptcontent.cache
+
+# OS noise
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
