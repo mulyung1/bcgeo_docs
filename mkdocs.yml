@@ -3,6 +3,12 @@ INHERIT: shared/mkdocs.base.yml
 site_name: Docs Hub
 site_url: https://mulyung1.github.io/bcgeo_docs/
 
+theme:
+  custom_dir: shared/overrides
+
+extra:
+  hub_link: false
+
 nav:
   - Home: index.md
 

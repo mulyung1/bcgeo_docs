@@ -7,6 +7,8 @@
 # own full `plugins:` list.
 theme:
   name: material
+  # Relative to each topic's mkdocs.yml (one level down). The hub overrides it.
+  custom_dir: ../shared/overrides
   logo: assets/logo.svg
   favicon: assets/favicon.svg
   font:
@@ -43,3 +45,7 @@ markdown_extensions:
   - pymdownx.superfences
   - admonition
   - pymdownx.details
+
+extra:
+  # Show the "Back to Documentation Hub" bar (see shared/overrides/main.html).
+  hub_link: true

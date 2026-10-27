@@ -1,0 +1,18 @@
+{#-
+  Shared Material theme override for every site in this repo.
+
+  Topic sites live one directory below the hub (site/<topic>/), so the hub is
+  always "<topic root>/../". `base_url` is the relative path from the current
+  page to the topic root, which keeps the link working under any path prefix
+  (e.g. https://<user>.github.io/bcgeo_docs/ or a custom domain root).
+  The hub itself sets `extra.hub_link: false` to hide the bar.
+-#}
+{% extends "base.html" %}
+
+{% block announce %}
+  {%- if config.extra.hub_link %}
+    <a href="{{ base_url.rstrip("/") }}/../" class="hub-link">
+      ← Back to Documentation Hub
+    </a>
+  {%- endif -%}
+{% endblock %}
