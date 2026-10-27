@@ -7,9 +7,9 @@ own MkDocs project, built and published together under one site.
 
 | Topic | Description |
 |-------|-------------|
-| [BCGeo Docs](/bcgeo/) | Tech notes for the Benin Climate Geoportal (BCGeo) — GeoNode customizations, production ops, SSO, backups and more. Password protected. |
-| [STAC Browser](/stac_browsa/) | Research & development notes for the STAC Browser. |
-| [SDI(s)](/sdis/) | Notes on serverless and traditional server-based geospatial data infrastructures |
+| [BCGeo Docs](bcgeo/) | Tech notes for the Benin Climate Geoportal (BCGeo) — GeoNode customizations, production ops, SSO, backups and more. Password protected. |
+| [STAC Browser](stac_browsa/) | Research & development notes for the STAC Browser. |
+| [SDI(s)](sdis/) | Notes on serverless and traditional server-based geospatial data infrastructures |
 
 ## Running locally
 
@@ -21,3 +21,4 @@ export PASSWORD=your_password   # required by the BCGeo topic
 ```
 
 See the [README](https://github.com/mulyung1/bcgeo_docs) for serving a single topic.
+

@@ -45,7 +45,7 @@ mkdocs serve                              # hub landing page
    ```yaml
    INHERIT: ../shared/mkdocs.base.yml
    site_name: My Topic
-   site_url: https://cgbenin.landscapealliance.org/mytopic/
+   site_url: https://your_url/mytopic/
    plugins:
      - search
    ```

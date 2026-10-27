@@ -1,7 +1,7 @@
 INHERIT: shared/mkdocs.base.yml
 
 site_name: Docs Hub
-site_url: https://cgbenin.landscapealliance.org/
+site_url: https://mulyung1.github.io/bcgeo_docs/
 
 nav:
   - Home: index.md
