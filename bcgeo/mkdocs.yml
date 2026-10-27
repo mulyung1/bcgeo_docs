@@ -1,0 +1,28 @@
+INHERIT: ../shared/mkdocs.base.yml
+
+site_name: BCGeo Docs
+site_url: https://mulyung1.github.io/bcgeo_docs/bcgeo/
+
+theme:
+  palette:
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: cyan
+      accent: deep purple
+
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: teal
+      accent: deep orange
+
+plugins:
+  - search
+  - encryptcontent:
+      password_inventory:
+        _global: !ENV PASSWORD # you'll need to `export PASSWORD=your_password` to env for dev

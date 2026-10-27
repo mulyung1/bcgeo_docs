@@ -1,0 +1,26 @@
+INHERIT: ../shared/mkdocs.base.yml
+
+site_name: Spatial Data Infrastructure(s)
+site_url: https://mulyung1.github.io/bcgeo_docs/sdis/
+
+
+theme:
+  palette:
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: green
+      accent: yellow
+
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: teal
+      accent: deep orange
+
+plugins:
+  - search

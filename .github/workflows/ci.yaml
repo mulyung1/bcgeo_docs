@@ -11,10 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
@@ -29,9 +25,20 @@ jobs:
         env:
           PASSWORD: ${{ secrets.PASSWORD }}
         run: 'echo $PASSWORD | grep -q . || (echo "PASSWORD secret is not set" && exit 1)'
-        
-      - run: pip install mkdocs-material mkdocs-encryptcontent-plugin
-      - name: Deploy Docs
+
+      - run: pip install -r requirements.txt
+
+      # Builds the hub + every topic into ./site
+      # (site/index.html, site/bcgeo/, site/stac_browsa/, ...)
+      - name: Build all doc sites
         env:
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: mkdocs gh-deploy --force
+        run: ./scripts/build.sh
+
+      # Publishes the combined site directory to the gh-pages branch
+      - name: Deploy combined site to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          force_orphan: true
