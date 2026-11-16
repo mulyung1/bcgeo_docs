@@ -55,6 +55,7 @@ mkdocs build --site-dir "$SITE_DIR" $STRICT_FLAG
 build_topic bcgeo/mkdocs.yml bcgeo
 build_topic stac_browsa/mkdocs.yml stac_browsa
 build_topic sdis/mkdocs.yml sdis
+build_topic databases/mkdocs.yml databases
 
 echo "==> Done. Combined site in ${SITE_DIR}/:"
 find "$SITE_DIR" -maxdepth 2 -name index.html | sort
