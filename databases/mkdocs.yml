@@ -1,0 +1,5 @@
+INHERIT: ../shared/mkdocs.base.yml
+site_name: Databases
+site_url: https://mulyung1.github.io/bcgeo_docs/databases/
+plugins:
+  - search
