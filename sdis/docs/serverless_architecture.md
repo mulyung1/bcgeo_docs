@@ -233,6 +233,44 @@ an example is `portolan-bootstrap`.
 </figure>
 
 
+You can explore portolan catalogs in the portolan browser, [here](https://www.portolan-sdi.org/registry?m=0.07%2F0.0000%2F-39.1230). 
+
+Skills for agents consuming portolan data are also available with guidance on 
+
+- navigating STAC metadata, 
+
+- querying GeoParquet and COG efficiently, 
+
+- joining datasets, and 
+
+- building analyses or applications from the results.
+
+## Built for people and agents
+
+Agents make it viable to work with geospatial data at a scale. 
+
+they can:
+
+- search across catalogs, 
+
+- inspect hundreds of assets, 
+
+- combine datasets from different publishers and 
+
+- iterate through an analysis
+
+All this in the time it'd take a person to navigate a few portals.
+
+!!! tip Doors
+    This opens up a much more ambitious use of public geospatial data.
+
+    - only if the underlying infrastructure is built for them.
+
+
+Portolan Catalogs are designed for agent access.
+
+
+
 
 ## References
 
