@@ -51,8 +51,7 @@ Example used below: `172.28.70.132`.
 ## 3. Start dsh bound to that IP
 
 ```bash
-IP=$(ipconfig getifaddr en0)   # Linux: IP=$(hostname -I | awk '{print $1}')
-npx @deepseek-ai/dsh web --host "$IP" --port 3080 --trusted-host "$IP:3080" --no-open
+npx @deepseek-ai/dsh web --host your_host_ip --port 3080 --trusted-host your_host_ip:3080 --no-open
 ```
 
 `--host` must be a real interface address. `0.0.0.0` is rejected.
@@ -85,3 +84,9 @@ machine. Share it only with trusted people. Keep it on a trusted LAN or VPN
   set `agent-default-model` > `model:` to `"qwen3.6:27b-coding"` (the name, not
   the ID from `ollama list`). Then restart dsh and start a new session.
 - Repeated `[deepseek-account] ... 403` log lines: harmless when only Ollama is used.
+
+
+## References
+
+- [DSH setup tutorial]('https://github.com/47thtechcorner/RayCodes_DeepSeek_Harness')
+- [Youtube Tutorial for local model setup]('https://www.youtube.com/watch?v=b7kk768JEws')
