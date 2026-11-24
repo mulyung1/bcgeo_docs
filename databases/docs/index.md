@@ -28,3 +28,11 @@ psql -U [username] -d [database_name] -f [path_to_backup_file.sql]
 pg_restore -U [username] -d [database_name] [path_to_dump_file]
 
 ```
+
+### list db schemas
+
+```sql
+\dn
+```
+
+
