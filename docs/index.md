@@ -11,6 +11,7 @@ own MkDocs project, built and published together under one site.
 | [STAC Browser](stac_browsa/) | Research & development notes for the STAC Browser. |
 | [SDI(s)](sdis/) | Notes on serverless and traditional server-based geospatial data infrastructures |
 | [Databases](databases/) | Various Postgres Commands |
+| [Coding Agent](dsh/) | setup of deepseek harness onto local via a locally running model. |
 
 ## Running locally
 
